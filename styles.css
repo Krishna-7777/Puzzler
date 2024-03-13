@@ -1,0 +1,18 @@
+#puzzle {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#puzzle div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+body {
+    background-color: black;
+}
