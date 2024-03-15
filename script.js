@@ -1,11 +1,9 @@
-// let imageSrc = 'https://cbcjamaica.files.wordpress.com/2015/04/numbers-from-1-to-12.jpg';
-// let imageSrc = 'https://www.travelandleisure.com/thmb/NjZjqqzUWc0pvwQtAIPo1sR9lvM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/hallerbos-forest-halle-belgium-2-BEAUTFORESTS0721-4ff5b556613e4814b5b7165f8851de39.jpg';
-// let imageSrc = 'https://images.pexels.com/photos/45853/grey-crowned-crane-bird-crane-animal-45853.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2';
 var search = location.search.split("?s=")[1]
-let imageSrc = "https://picsum.photos/1600/1200"
+var screenWidth = window.innerWidth;
+var screenHeight = window.innerHeight;
+let imageSrc = `https://picsum.photos/${screenWidth}/${screenHeight}`
 if (!!search)
-    imageSrc = "https://loremflickr.com/1600/1200/" + search
-// let imageSrc = "https://i0.wp.com/laruephoto.com/wp-content/uploads/2018/08/Animated-Star-Trails-Sedona.gif?ssl=1"
+    imageSrc = `https://loremflickr.com/${screenWidth}/${screenHeight}/${search}`
 const puzzle = document.getElementById('puzzle');
 let image = new Image();
 let divs = []
@@ -26,8 +24,6 @@ image.onload = load
 
 function load() {
     console.log(image.width);
-    image.width = 1200
-    image.height = 900
     const tileWidth = image.width / 3;
     const tileHeight = image.height / 3;
     var id = 0
