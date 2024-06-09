@@ -10,11 +10,16 @@
     font-size: 30px;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.5s;
+    transition: 0.35s;
 }
 
 body {
     background-color: black;
     margin: 0;
     padding: 0;
+}
+
+.grayscale {
+    -webkit-filter: grayscale(80%);
+    filter: grayscale(80%);
 }

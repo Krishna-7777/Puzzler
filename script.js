@@ -23,7 +23,6 @@ image.onerror = () => {
 image.onload = load
 
 function load() {
-    console.log(image.width);
     const tileWidth = image.width / 3;
     const tileHeight = image.height / 3;
     var id = 0
@@ -85,15 +84,19 @@ function render() {
     progress = 0
     for (let i = 0; i < pieces; i++) {
         divs[i].name = i
-        if (i == divs[i].id)
+        if (i == divs[i].id) {
+            divs[i].classList.remove('grayscale')
             progress++
-        else
+        }
+        else{
             notInPlace.push(divs[i].id)
+            divs[i].classList.add('grayscale')
+        }
         document.getElementById('puzzle').appendChild(divs[i]);
     }
-    console.log(progress)
+    // console.log(progress)
     if (progress == 7) {
-        console.log(notInPlace)
+        // console.log(notInPlace)
     } else {
         notInPlace = []
     }
