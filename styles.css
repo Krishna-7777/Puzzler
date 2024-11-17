@@ -11,15 +11,122 @@
     font-weight: bold;
     cursor: pointer;
     transition: 0.35s;
+    margin: 0px;
 }
 
 body {
     background-color: black;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .grayscale {
     -webkit-filter: grayscale(80%);
     filter: grayscale(80%);
+}
+
+#header {
+    backdrop-filter: url('#glass');
+    position: fixed;
+    top: 0px;
+    padding: 10px;
+    font-size: 0.5 rem;
+    width: 100%;
+    z-index: 100;
+    color: white;
+    box-shadow: 0px 10px 15px 10px rgb(0 0 0 / 5%);
+    text-shadow:
+        .04em .06em .08em #0008,
+        .1em .14em .16em #0006;
+
+    display: flex;
+    justify-content: space-between;
+    /* gap: 0px; */
+    overflow: hidden;
+}
+
+/* #header>div {
+    width: fit-content;
+} */
+
+.tools {
+    font-size: 25px;
+    fill: white;
+    width: fit-content;
+    /* width:100%; */
+    display: flex;
+    justify-content: space-evenly;
+    height: 25px;
+    margin-right: 15px;
+}
+
+.tools>svg {
+    width: 25px;
+    padding: 1px;
+}
+
+.tools>input {
+    background: unset;
+    box-shadow: 0px 10px 15px 10px rgb(0 0 0 / 5%);
+    appearance: none;
+    color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 4px;
+    margin-left: 8px;
+}
+
+.dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 20 px;
+    text-align: center;
+    justify-content: space-between;
+    backdrop-filter: url('#glass');
+    color: white;
+}
+
+.dialog input {
+    background: unset;
+    box-shadow: 0px 10px 15px 10px rgb(0 0 0 / 5%);
+    appearance: none;
+    color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.dialog>div {
+    margin: 4px;
+}
+
+.hidden {
+    display: none;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }

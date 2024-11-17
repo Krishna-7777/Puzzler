@@ -1,16 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photo Slide Puzzle</title>
+    <title>Kuzzler : Photo Puzzle</title>
     <link rel="stylesheet" href="styles.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8698123812207164"
-     crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <div id="puzzle"></div>
+    <svg width=0 height=0>
+        <defs>
+            <filter id="glass">
+                <feTurbulence type="turbulence" baseFrequency="0.03" numOctaves="2" />
+                <feDisplacementMap in2="turbulence" in="SourceGraphic" scale="14" xChannelSelector="R"
+                    yChannelSelector="G" />
+                <feGaussianBlur stdDeviation="6" />
+                <feColorMatrix type="saturate" values="0.8" />
+                <feColorMatrix type="matrix" values=" 
+             .96  0  0  0  0
+             .04  1  0  0  0
+             .04 .06 1  0  0
+              0   0  0  1  0" />
+            </filter>
+        </defs>
+    </svg>
+    <div id="header">
+        <div> Kuzzler</div>
+        <div class="tools">
+            <div id="progress">0%</div>
+            <input type="search" name="search" id="search">
+            <svg xmlns="http://www.w3.org/2000/svg" onclick="searchText()">
+                <path
+                    d="M20.207 18.793L16.6 15.184a7.027 7.027 0 1 0-1.416 1.416l3.609 3.609a1 1 0 0 0 1.414-1.416zM6 11a5 5 0 1 1 5 5 5.006 5.006 0 0 1-5-5z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" onclick="toggleDialog()">
+                <path
+                    d="M4 2C3.44772 2 3 2.44772 3 3C3 3.55228 3.44772 4 4 4H20C20.5523 4 21 3.55228 21 3C21 2.44772 20.5523 2 20 2H4Z" />
+                <path
+                    d="M6.29289 13.7071C6.68342 14.0976 7.31658 14.0976 7.70711 13.7071L11 10.4142L11 21C11 21.5523 11.4477 22 12 22C12.5523 22 13 21.5523 13 21L13 10.4142L16.2929 13.7071C16.6834 14.0976 17.3166 14.0976 17.7071 13.7071C18.0976 13.3166 18.0976 12.6834 17.7071 12.2929L12.7071 7.29289C12.3166 6.90237 11.6834 6.90237 11.2929 7.29289L6.29289 12.2929C5.90237 12.6834 5.90237 13.3166 6.29289 13.7071Z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" onclick="script()">
+                <path
+                    d="M19.146 4.854l-1.489 1.489A8 8 0 1 0 12 20a8.094 8.094 0 0 0 7.371-4.886 1 1 0 1 0-1.842-.779A6.071 6.071 0 0 1 12 18a6 6 0 1 1 4.243-10.243l-1.39 1.39a.5.5 0 0 0 .354.854H19.5A.5.5 0 0 0 20 9.5V5.207a.5.5 0 0 0-.854-.353z" />
+            </svg>
+        </div>
+    </div>
+    <div class="container">
+        <div id="puzzle"></div>
+    </div>
+    <div id="upload" class="hidden">
+        <div class="overlay" onclick="toggleDialog()"></div>
+        <div class="dialog">
+            <div for="upload">Upload Your Image and Play it as a Puzzle</div>
+            <div>
+                <input type="file" name="upload" id="fileInput" accept="image/*">
+            </div>
+            <div>OR</div>
+            <div for="url">Enter Image Url</div>
+            <div>
+                <input type="url" name="url" id="url">
+            </div>
+            <div>
+                <input type="submit" value="Done" onclick="handleFileUpload()">
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>
