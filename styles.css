@@ -18,7 +18,7 @@ body {
     background-color: black;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
+    overflow: hidden;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -43,19 +43,12 @@ body {
 
     display: flex;
     justify-content: space-between;
-    /* gap: 0px; */
-    overflow: hidden;
 }
 
-/* #header>div {
-    width: fit-content;
-} */
-
 .tools {
-    font-size: 25px;
+    font-size: 0.5 rem;
     fill: white;
     width: fit-content;
-    /* width:100%; */
     display: flex;
     justify-content: space-evenly;
     height: 25px;
@@ -76,6 +69,7 @@ body {
     border-radius: 4px;
     margin-right: 4px;
     margin-left: 8px;
+    font-size: 0.5 rem;
 }
 
 .dialog {
